@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juneau Vacation Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        /* Main Container */
+        .container {
+            padding: 0 40px; /* Reduced left/right padding */
+            max-width: 1500px; /* Adjusted max-width */
+            margin: 0 auto;
+        }
+
+        /* Top Navigation */
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #e5e5e5;
+            gap: 1.5rem;
+        }
+
+        .top-nav a {
+            text-decoration: none;
+            color: #222;
+            font-size: 0.9rem;
+        }
+
+        /* Sub Navigation */
+        .sub-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .back-link {
+            color: #0066ff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .back-link::before {
+            content: "←";
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            background: white;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-heart {
+            color: #FF385C;
+        }
+
+        /* Image Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: 1.5fr 1.5fr;
+            gap: 0.2rem;
+            height: 300px; /* Reduced height */
+        }
+
+        .gallery-main {
+            position: relative;
+            height: 100%;
+        }
+
+        .gallery-main img {
+            width: 100%;
+            height: 100%;
+            object-fit:cover;
+            border-radius: 8px 0 0 8px;
+        }
+
+        .gallery-side {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.2rem;
+        }
+
+        .gallery-side img {
+            width: 100%;
+            height: 100%;
+            object-fit:cover;
+            border-radius: 0; /* Reset any default rounding */
+        }
+
+        .gallery-side img:first-child {
+            border-radius: 0 8px 0 0;
+        }
+
+        .gallery-side img:last-child {
+            border-radius: 0 0 8px 0;
+            position: relative;
+        }
+
+        .photo-count {
+            position: absolute;
+            bottom: 0.5rem;
+            right: 0.5rem;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .photo-count::before {
+            content: "";
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 16 16"><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>');
+            background-size: contain;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px; /* Reduced mobile padding */
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .gallery-main img {
+                border-radius: 8px 8px 0 0;
+            }
+
+            .gallery-side {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+            }
+
+            .gallery-side img:first-child {
+                border-radius: 0 0 0 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <a href="#"><span>🌐</span><b>United States</b></a>
+        <a href="#"><b>Trip Boards</b></a>
+        <a href="#"><b>List your property</b></a>
+        <a href="#"><b>Help</b></a>
+        <a href="#"><b>My trips</b></a>
+        <a href="#"><b>Sign in</b></a>
+    </nav>
+
+    <!-- Main Container Start -->
+    <div class="container">
+        <!-- Sub Navigation -->
+        <div class="sub-nav">
+            <a href="#" class="back-link"><b>See all properties</b></a>
+            <div class="action-buttons">
+                <button class="btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                        <polyline points="16 6 12 2 8 6"></polyline>
+                        <line x1="12" y1="2" x2="12" y2="15"></line>
+                    </svg>
+                    Share
+                </button>
+                <button class="btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-heart">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    Save
+                </button>
+            </div>
+        </div>
+
+        <!-- Image Gallery -->
+        <div class="gallery">
+            <div class="gallery-main">
+                <img src="h1.png" alt="Lake view with deck and red chairs">
+            </div>
+            <div class="gallery-side">
+                <img src="h2.png" alt="Small cottage exterior">
+                <img src="h3.png" alt="Living room with blue couch">
+                <img src="h4.png" alt="Living room with windows">
+                <img src="h5.png" alt="Bed room with windows">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

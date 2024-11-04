@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Gallery</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .header a {
+            text-decoration: none;
+            color: #0066c0;
+            font-size: 0.9em;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            font-size: 0.9em;
+        }
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-gap: 10px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .button {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9em;
+        }
+        .button:hover {
+            background-color: #f1f1f1;
+        }
+        .button.heart {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#">&larr; See all properties</a>
+        <nav class="nav-links">
+            <a href="#">United States</a>
+            <a href="#">Trip Boards</a>
+            <a href="#">List your property</a>
+            <a href="#">Help</a>
+            <a href="#">My trips</a>
+            <a href="#">Sign in</a>
+        </nav>
+    </header>
+
+    <div class="gallery">
+        <img src="image1.jpg" alt="Scenic View">
+        <img src="image2.jpg" alt="House Front">
+        <img src="image3.jpg" alt="Living Room">
+        <img src="image4.jpg" alt="Bedroom">
+        <div style="position: relative;">
+            <img src="image5.jpg" alt="Extra Room">
+            <div style="position: absolute; bottom: 10px; right: 10px; background-color: rgba(0,0,0,0.6); color: white; padding: 5px 10px; border-radius: 5px;">
+                30+
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <a href="#" class="button">
+            <span>🔗</span> Share
+        </a>
+        <a href="#" class="button heart">
+            <span>❤️</span> Save
+        </a>
+    </div>
+</body>
+</html>
