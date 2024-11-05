@@ -358,9 +358,7 @@
     font-size: 18px;
 }
 
-.cancellation span:first-child {
-    font-weight: bold;
-}
+
 
 .availability i {
     color: green;
@@ -651,7 +649,6 @@ button.travelers-selector {
 /* Damage and incidentals */
 
 .rules, .incidentals, .cancellation {
-    font-size: 0.9rem;
     line-height: 1.6;
 }
 
@@ -676,16 +673,23 @@ button.travelers-selector {
     background-color: #f5f5f5;
     padding: 15px;
     border-radius: 8px;
-    margin-top: 10px;
+    margin-right: 5%;
 }
 
 .timeline {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-evenly;
     align-items: center;
-    font-size: 0.8rem;
     margin-top: 10px;
 }
+
+.timeline-2 {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
 
 .timeline-bar {
     height: 2px;
